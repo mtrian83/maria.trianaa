@@ -1533,7 +1533,7 @@ input, select, textarea {
 
 		header > p {
 			margin: 0.5em 0 0 0;
-			color: #aaa;
+			color: #000000;
 		}
 
 		@media screen and (max-width: 736px) {
@@ -1969,7 +1969,6 @@ input, select, textarea {
 			#main > .panel.inactive {
 				opacity: 0;
 			}
-
 			@media screen and (max-width: 736px) {
 
 				#main > .panel {
@@ -2015,7 +2014,6 @@ input, select, textarea {
 						position: absolute;
 						top: 0;
 						left: 0;
-						background: url("images/background2.jpg");
 						width: 100%;
 						height: 100%;
 						z-index: 1;
