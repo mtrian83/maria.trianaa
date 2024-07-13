@@ -25,7 +25,6 @@
 						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
 						<a href="https://github.com/mtrian83" class="icon brands fa-github"><span>Github</span></a>
 						<a href="https://www.instagram.com/maria.trianaa" class="icon brands fa-instagram"><span>Instagram</span></a>
-
 					</nav>
 
 				<!-- Main -->
@@ -40,7 +39,7 @@
 								</header>
 								<a href="#work" class="jumplink pic">
 									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
-									<img src="../../static/images/me.jpeg" alt="Maria Triana near a tree." />
+									<img src="static/images/me.jpeg" alt="Maria Triana near a tree." />
 								</a>
 							</article>
 
@@ -56,47 +55,8 @@
 									other hobbies of mine include reading, playing tennis, singing, baking, hugging people,
 									being outside, and playing chess.
 								</p>
-								<section>
-									<div class="row">
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="../../static/images/pic01.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="static/images/pic02.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="static/images/pic03.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="static/images/pic04.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="static/images/pic05.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="static/images/pic06.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="static/images/pic07.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="static/images/pic08.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="static/images/pic09.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="static/images/pic10.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="static/images/pic11.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="static/images/pic12.jpg" alt=""></a>
-										</div>
-									</div>
-								</section>
 							</article>
+
 						<!-- Work -->
 							<article id="work" class="panel">
 								<header>
@@ -153,29 +113,32 @@
 								<header>
 									<h2>Contact Me</h2>
 								</header>
-								<form action="#" method="post">
-									<div>
-										<div class="row">
-											<div class="col-6 col-12-medium">
-												<input type="text" name="name" placeholder="Name" />
-											</div>
-											<div class="col-6 col-12-medium">
-												<input type="text" name="email" placeholder="Email" />
-											</div>
-											<div class="col-12">
-												<input type="text" name="subject" placeholder="Subject" />
-											</div>
-											<div class="col-12">
-												<textarea name="message" placeholder="Message" rows="6"></textarea>
-											</div>
-											<div class="col-12">
-												<input type="submit" value="Send Message" />
+								{% if msg_sent %}
+									<p>Thank you for your message. It has been sent.</p>
+								{% else %}
+									<form action="/contact" method="post">
+										<div>
+											<div class="row">
+												<div class="col-6 col-12-medium">
+													<input type="text" name="name" placeholder="Name" required/>
+												</div>
+												<div class="col-6 col-12-medium">
+													<input type="email" name="email" placeholder="Email" required/>
+												</div>
+												<div class="col-12">
+													<input type="text" name="subject" placeholder="Subject" required/>
+												</div>
+												<div class="col-12">
+													<textarea name="message" placeholder="Message" rows="6" required></textarea>
+												</div>
+												<div class="col-12">
+													<input type="submit" value="Send Message" />
+												</div>
 											</div>
 										</div>
-									</div>
-								</form>
+									</form>
+								{% endif %}
 							</article>
-
 					</div>
 
 				<!-- Footer -->
